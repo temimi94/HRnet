@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kenia&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+.header-employee {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.path-employee {
+  text-decoration: none;
+  color: black;
+}
+
+.title {
+  font-family: "Kenia", cursive;
+  font-size: 20px;
+  color: rgb(89, 69, 107);
+}
+.container,
+h2 {
+  margin-top: 45px;
+  font-size: 20px;
+  font-family: "Dancing Script", cursive;
+}
