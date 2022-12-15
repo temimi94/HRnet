@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap");
+
 body {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/001/227/759/original/abstract-modern-cool-geometric-pattern-background-vector.jpg");
 }
 
 .form-employee {
@@ -11,35 +13,40 @@ body {
 
 section h2 {
   text-align: center;
+  color: white;
+  font-size: 25px;
 }
 
 form {
   background-color: white;
-  border: black;
+  margin-bottom: 50px;
   padding: 50px;
-  border-radius: 10px;
-  box-shadow: 2px 3px 3px 2px rgb(89 69 107);
+  border-radius: 5px;
   width: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+ 
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 
 .select-left {
-  margin-right: 30px;
+  margin-right: 50px;
 }
 
 input {
   cursor: pointer;
   border-radius: 5px;
-  padding: 5px;
-  margin-top: 5px;
+  padding: 7px;
+  margin-top: 8px;
   font-family: "Raleway", sans-serif;
   font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: solid 1px rgb(177, 173, 173);
 }
 
 input:hover {
-  box-shadow: 1px 2px rgb(89 69 107);
+  background-color: rgb(179, 79, 149);
 }
 
 .form-group {
@@ -50,11 +57,15 @@ input:hover {
 
 .save-modal {
   margin: auto;
-  background: rgb(89 69 107);
-  padding: 5px 15px;
+  background: rgb(179, 79, 149);
+  padding: 10px 15px;
   border: white;
+  color: white;
+  font-weight: bold;
   border-radius: 5px;
+  font-size: 15px;
   display: flex;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .save-modal:hover {
@@ -62,7 +73,7 @@ input:hover {
   cursor: pointer;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
 .modal-overlay {
   position: fixed;
@@ -115,5 +126,3 @@ input:hover {
   position: relative;
   left: 95%;
 }
-
-

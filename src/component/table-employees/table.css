@@ -3,6 +3,7 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin-top: 10px;
+  color:white;
 }
 
 table td,
@@ -11,12 +12,10 @@ table th {
   padding: 8px;
 }
 
-table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
+
 
 table tr:hover {
-  background-color: #ddd;
+  background-color: rgb(95, 94, 94);
 }
 
 table th {
@@ -32,10 +31,11 @@ table th {
   flex-direction: row;
   justify-content: space-between;
   margin: 40px;
+  color: white;
 }
 
 .footerTable button {
-  background: rgb(89 69 107);
+  background: rgb(179, 79, 149);
   padding: 5px 15px;
   border: white;
   border-radius: 5px;
@@ -50,4 +50,5 @@ button:hover {
 
 .search {
   margin-top: 50px;
+  color: white;
 }

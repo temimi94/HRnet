@@ -10,13 +10,13 @@
 
 .path-employee {
   text-decoration: none;
-  color: black;
+  color: rgb(255, 252, 252);
 }
 
 .title {
   font-family: "Kenia", cursive;
   font-size: 20px;
-  color: rgb(89, 69, 107);
+  color: rgb(251, 248, 253);
 }
 .container,
 h2 {
