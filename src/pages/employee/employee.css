@@ -1,16 +1,24 @@
 #employee-div {
-  text-align: center;
-  color: white;
-}
-
-.path-home {
-  text-align: center;
-  font-family: "Dancing Script", cursive;
-  color: white;
-}
-
-.path {
-  text-decoration: none;
-  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
   font-size: 25px;
+ 
 }
+
+.path {  
+  font-family: "Dancing Script", cursive;
+  
+  color:black;
+  font-size: 25px;
+ 
+  
+}
+
+#employee-div h3 {
+  font-size: 25px;
+  margin-top: 0px;
+}
+
+

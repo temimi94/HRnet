@@ -57,8 +57,8 @@ const TableEmployees = () => {
                   <span>
                     {column.isSorted
                       ? column.isSortedDesc
-                        ? "bas"
-                        : "haut"
+                        ? "⇧"
+                        : "⇩"
                       : ""}
                   </span>
                 </th>
@@ -103,18 +103,12 @@ const TableEmployees = () => {
               style={{ width: "50px" }}
             />
           </span>
-          {/*   <button onClick={() => goToPage(0)} disabled={!canPreviousPage}>
-          {"<<"}
-        </button> */}
           <button onClick={() => previousPage()} disabled={!canPreviousPage}>
             Previous
           </button>
           <button onClick={() => nextPage()} disabled={!canNextPage}>
             Next
           </button>
-          {/*  <button onClick={() => goToPage(pageCount - 1)} disabled={!canNextPage}>
-          {">>"}
-        </button> */}
         </div>
       </div>
     </>

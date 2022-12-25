@@ -9,14 +9,13 @@ const Employee = () => {
       <div>
         <div id="employee-div" className="container">
           <h3>Current Employees</h3>
+          <Link className="path" to="/">
+          Home
+        </Link>
         </div>
       </div>
       <TableEmployees />
-      <div className="path-home">
-        <Link className="path" to="/">
-          Home
-        </Link>
-      </div>
+     
     </section>
   );
 };

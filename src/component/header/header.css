@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kenia&display=swap");
+ @import url('https://fonts.googleapis.com/css2?family=Caramel&display=swap'); 
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
 .header-employee {
@@ -10,13 +10,21 @@
 
 .path-employee {
   text-decoration: none;
-  color: rgb(255, 252, 252);
+  color: black;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.path-employee:hover {
+  background-color: transparent;
 }
 
 .title {
-  font-family: "Kenia", cursive;
-  font-size: 20px;
-  color: rgb(251, 248, 253);
+  font-family: 'Caramel', cursive;
+  font-size: 40px;
+    margin-top: -50px;
 }
 .container,
 h2 {

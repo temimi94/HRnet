@@ -7,18 +7,20 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./form.css";
 import { useDispatch } from "react-redux";
 import { addEmployee } from "../../redux/reducer";
-import { Modal, UseModal } from "package-modal-gaya";
-
-const Form = (props) => {
-  const [firstName, setFirstName] = React.useState(null);
-  const [lastName, setLastName] = React.useState(null);
-  const [dateOfBirth, setDateOfBirth] = React.useState(new Date());
-  const [state, setState] = React.useState(null);
-  const [street, setStreet] = React.useState(null);
-  const [city, setCity] = React.useState(null);
-  const [startDate, setStartDate] = React.useState(new Date());
-  const [zipCode, setZipeCode] = React.useState(null);
-  const [department, setDepartment] = React.useState(null);
+import { useForm } from "react-hook-form";
+import { Modal, UseModal } from "modal-react-npm";
+import { useState } from "react";
+ 
+const Form = () => {
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
+  const [dateOfBirth, setDateOfBirth] = useState(new Date());
+  const [state, setState] = useState(null);
+  const [street, setStreet] = useState(null);
+  const [city, setCity] = useState(null);
+  const [startDate, setStartDate] = useState(new Date());
+  const [zipCode, setZipeCode] = useState(null);
+  const [department, setDepartment] = useState(null);
 
   const dispatch = useDispatch();
   const { isShowing, toggle } = UseModal();
@@ -35,8 +37,14 @@ const Form = (props) => {
     department,
   };
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitSuccessful },
+  } = useForm();
+
+ 
+  const onSubmit = () => {
     dispatch(addEmployee({ ...values }));
   };
 
@@ -60,25 +68,44 @@ const Form = (props) => {
     <section>
       <h2>Create Employee</h2>
       <div className="form-employee">
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="select-left">
             <div className="form-group">
               <label htmlFor="firstName">First Name</label>
               <input
+                {...register("firstName", {
+                  required: true,
+                  minLength: {
+                    value: 4,
+                  },
+                })}
                 type="text"
+                placeholder="First Name"
                 id="name"
-                name="firstName"
                 onChange={(e) => setFirstName(e.target.value)}
               />
+              {errors.firstName && (
+                <p className="errors">This is required, Min length is 4</p>
+              )}
             </div>
 
             <div className="form-group">
               <label htmlFor="lastName">Last Name</label>
               <input
+                {...register("lastName", {
+                  required: true,
+                  minLength: {
+                    value: 4,
+                  },
+                })}
+                placeholder="Last Name"
                 type="text"
                 name="lastName"
                 onChange={(e) => setLastName(e.target.value)}
               />
+              {errors.lastName && (
+                <p className="errors">This is required, Min length is 4</p>
+              )}
             </div>
 
             <div className="form-group">
@@ -104,21 +131,26 @@ const Form = (props) => {
             <div className="form-group">
               <label htmlFor="street">Street</label>
               <input
+                {...register("street", { required: true })}
                 type="text"
                 name="street"
                 onChange={(e) => setStreet(e.target.value)}
+                placeholder="Street"
               />
+              {errors.street && <p className="errors">This is Required </p>}
             </div>
           </div>
           <div className="select-rigth">
             <div className="form-group">
               <label htmlFor="city">City</label>
               <input
+                {...register("city", { required: true })}
                 type="text"
                 name="city"
                 onChange={(e) => setCity(e.target.value)}
-                required={true}
+                placeholder="Street"
               />
+              {errors.city && <p className="errors">This is Required</p>}
             </div>
 
             <div className="form-group">
@@ -141,6 +173,7 @@ const Form = (props) => {
               <input
                 id="zip-code"
                 type="number"
+                placeholder="Zip Code"
                 name="zipCode"
                 onChange={(e) => setZipeCode(e.target.value)}
                 required={true}
@@ -164,11 +197,14 @@ const Form = (props) => {
             <button className="save-modal" onClick={toggle}>
               Save
             </button>
-            <Modal
-              isShowing={isShowing}
-              hide={toggle}
-              title="Employee Created !!"
-            />
+            {isSubmitSuccessful && (
+              <Modal
+                isShowing={isShowing}
+                hide={toggle}
+                title="Employee Created !!"
+                
+              />
+            )}
           </div>
         </form>
       </div>
