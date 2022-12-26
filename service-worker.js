@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/HRnet/precache-manifest.ce4d1f102aec38188e2971537644dc10.js"
+  "/HRnet/precache-manifest.7e05e41d86c2b98a8e0e1d354943634f.js"
 );
 
 workbox.clientsClaim();
