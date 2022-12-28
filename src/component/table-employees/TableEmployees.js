@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import { useSelector } from "react-redux";
 import {
   useTable,
   useSortBy,
@@ -11,11 +10,13 @@ import "./table.css";
 import FiltringTable from "./FiltringTable";
 
 const TableEmployees = () => {
-  const stateData = useSelector((state) => state.employee.employees);
-  console.log(stateData);
+ 
+ const employees = JSON.parse(localStorage.getItem("employee"));
+
 
   const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => stateData, []);
+  const data = useMemo(() => employees, []);
+
 
   const {
     getTableProps,

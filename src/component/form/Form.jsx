@@ -5,12 +5,13 @@ import departments from "./Department";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./form.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addEmployee } from "../../redux/reducer";
 import { useForm } from "react-hook-form";
 import { Modal, UseModal } from "modal-react-npm";
 import { useState } from "react";
- 
+import { format } from "date-fns";
+
 const Form = () => {
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
@@ -28,10 +29,10 @@ const Form = () => {
   const values = {
     firstName: firstName,
     lastName,
-    dateOfBirth,
+    dateOfBirth: format(dateOfBirth, "dd/MM/yyyy"),
     state,
     street,
-    startDate,
+    startDate: format(startDate, "dd/MM/yyyy"),
     city,
     zipCode,
     department,
@@ -43,7 +44,10 @@ const Form = () => {
     formState: { errors, isSubmitSuccessful },
   } = useForm();
 
- 
+  const stateData = useSelector((state) => state.employee.employees);
+  console.log(stateData);
+  localStorage.setItem("employee", JSON.stringify(stateData));
+
   const onSubmit = () => {
     dispatch(addEmployee({ ...values }));
   };
@@ -202,7 +206,6 @@ const Form = () => {
                 isShowing={isShowing}
                 hide={toggle}
                 title="Employee Created !!"
-                
               />
             )}
           </div>
