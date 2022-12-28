@@ -2,7 +2,7 @@
   "name": "projet-final",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://temimi94_github.io/HRnet/",
+  "homepage": "https://temimi94.github.io/HRnet/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
