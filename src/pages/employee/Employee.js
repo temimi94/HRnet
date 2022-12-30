@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./employee.css";
 import TableEmployees from "../../component/table-employees/TableEmployees";
 
-const Employee = () => {
+const Employee = React.memo(() => {
   return (
     <section>
       <div>
@@ -18,6 +18,6 @@ const Employee = () => {
      
     </section>
   );
-};
+});
 
 export default Employee;

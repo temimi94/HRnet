@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './error.css';
 
-const Error = () => {
+const Error = React.memo(() => {
     return (
         <div className="error-page">
             <h1>HRnet</h1>
@@ -10,6 +10,6 @@ const Error = () => {
             <Link to="/" className='path'>Home Page</Link>
         </div>
     );
-};
+});
 
 export default Error;
